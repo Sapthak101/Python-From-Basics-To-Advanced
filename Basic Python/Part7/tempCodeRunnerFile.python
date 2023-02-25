@@ -1,0 +1,93 @@
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+random_word_list=["Barcelona", "Chelsea", "Real Madrid"]
+
+import random as rn
+
+random_word=rn.choice(random_word_list)
+length=len(random_word)
+
+display=[]
+for letter in random_word:
+    display+="_"
+print(display)
+
+i=6
+count=0
+eof=False
+while (not eof):
+    guess_l=input("Enter a letter: ")
+    for letter in range(length): # here only length represents the loop will run until the second last element in the string
+        if (guess_l==random_word[letter]):
+            display[letter]=guess_l
+            print(display)
+            count+=1
+
+    if count==0:
+        print(stages[i])
+        if (i==0):
+            print("You lose!")
+            break
+        i-=1
+
+    if '_' not in display:
+        print("You Won!")
+        eof=True
+
+    count=0
