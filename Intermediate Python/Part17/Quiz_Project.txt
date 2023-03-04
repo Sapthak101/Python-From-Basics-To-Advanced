@@ -1,0 +1,2 @@
+Replit: https://replit.com/@Sapthak-Mohajon/Quiz#main.py
+Trivia Database can be utilised to create new questions: https://opentdb.com/
